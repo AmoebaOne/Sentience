@@ -1,0 +1,22 @@
+﻿using System;
+using Base;
+
+namespace Configuration
+{
+    /// <summary>
+    /// An exception for when there is a problem with the configuration
+    /// Doesn't extend SentienceException due to circular dependency (fix?)
+    /// </summary>
+    public class ConfigurationException : SentienceException
+    {
+        /// <summary>
+        /// A configuration exception
+        /// </summary>
+        /// <param name="code">Error code</param>
+        /// <param name="messages">Messages</param>
+        /// <param name="context">Object context</param>
+        /// <param name="Level">The error level</param>
+        /// <param name="exception">Optional inner exception</param>
+        public ConfigurationException(int code, Messages messages, object context = null, Log.Level Level = Log.Level.Error, Exception exception = null) : base(code, messages, context, Level, exception) { }
+    }
+}
